@@ -221,28 +221,68 @@
 					<section class="wrapper style1 align-center">
 						<div class="inner medium">
 							<h2>Get in touch</h2>
-							<form method="post" action="contact.php">
+							<form id="contactForm" method="post" action="https://formspree.io/f/{your-form-id}">
 								<div class="fields">
 									<div class="field half">
 										<label for="name">Name</label>
-										<input type="text" name="name" id="name" value="" />
+										<input type="text" name="name" id="name" value="" required />
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
-										<input type="email" name="email" id="email" value="" />
+										<input type="email" name="email" id="email" value="" required />
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="6"></textarea>
+										<textarea name="message" id="message" rows="6" required></textarea>
 									</div>
 								</div>
 								<ul class="actions special">
 									<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
 								</ul>
 							</form>
-
+					
+							<!-- Thank You Popup -->
+							<div id="thankYouPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+								<h3>Thank You!</h3>
+								<p>Your message has been sent successfully.</p>
+								<button onclick="closePopup()">Close</button>
+							</div>
 						</div>
 					</section>
+					
+					<script>
+						document.getElementById("contactForm").addEventListener("submit", function (event) {
+							event.preventDefault(); // Prevent the default form submission
+					
+							// Send the form data to Formspree
+							const form = event.target;
+							const formData = new FormData(form);
+							fetch(form.action, {
+								method: form.method,
+								body: formData,
+								headers: {
+									'Accept': 'application/json'
+								}
+							})
+							.then(response => {
+								if (response.ok) {
+									// Show Thank You Popup
+									document.getElementById("thankYouPopup").style.display = "block";
+									form.reset(); // Reset form fields
+								} else {
+									alert("Oops! There was a problem with your submission.");
+								}
+							})
+							.catch(error => {
+								alert("Oops! There was a problem with your submission.");
+							});
+						});
+					
+						// Function to close the Thank You popup
+						function closePopup() {
+							document.getElementById("thankYouPopup").style.display = "none";
+						}
+					</script>
 
 				<!-- Footer -->
 					<footer class="wrapper style1 align-center">
