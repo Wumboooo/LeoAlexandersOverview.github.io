@@ -65,3 +65,18 @@
 		box.appendChild(p);
 	}
 })();
+
+// drive the page-wide sky (night -> sunset) from scroll progress
+(function () {
+	var r = document.documentElement;
+	function upd() {
+		var max = r.scrollHeight - r.clientHeight;
+		r.style.setProperty('--p', max > 0 ? Math.min(1, Math.max(0, r.scrollTop / max)).toFixed(3) : 0);
+	}
+	addEventListener('scroll', upd, { passive: true });
+	addEventListener('resize', upd);
+	upd();
+	// petals fall across the whole viewport
+	var box = document.getElementById('petals');
+	if (box) document.body.appendChild(box);
+})();
