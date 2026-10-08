@@ -208,3 +208,4 @@ body:after{content:"";position:fixed;right:4vw;top:6vh;width:7rem;height:7rem;bo
 #wrapper .gallery article>a.image:before{inset:.6rem;border-radius:.8rem}
 #wrapper .gallery article>a.image{background:#14103d}
 #wrapper .gallery article>a.image img{object-fit:contain;padding:.9rem}
+#wrapper .gallery article>a.image img{object-fit:cover;object-position:center;padding:0}
