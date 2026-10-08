@@ -150,7 +150,7 @@ body{background:#1b1450}
 
 /* ===== Unified anime sky theme (whole site) ===== */
 html{background:#1b1450}
-body{background:linear-gradient(180deg,#14103d 0%,#2a1b66 35%,#4a2a7a 65%,#a8467f 100%) fixed!important;color:#e9e4ff!important;min-height:100vh}
+body{background:linear-gradient(180deg,#14103d 0%,#2a1b66 30%,#3d2475 60%,#7a3a8c 82%,#d0589a 100%) no-repeat!important;background-size:100% 100%!important;color:#e9e4ff!important;min-height:100vh}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;
  background-image:radial-gradient(#fff 1px,transparent 1.3px),radial-gradient(#cfe 1px,transparent 1.3px);background-size:90px 90px,140px 140px;background-position:0 0,45px 60px}
 body:after{content:"";position:fixed;right:4vw;top:6vh;width:7rem;height:7rem;border-radius:50%;pointer-events:none;z-index:0;
