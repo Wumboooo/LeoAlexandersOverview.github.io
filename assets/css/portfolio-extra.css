@@ -52,6 +52,26 @@ body.light-mode #wrapper img{filter:invert(1) hue-rotate(180deg)}
 #featured .filters button{color:#e2e8f0}
 #featured .filters button.on{color:#0b1220}
 #featured .chips li{color:#bae6fd}
-#journey+section,#journey ~ section:last-of-type{background:linear-gradient(180deg,#fff,#f4f8ff)}
 #featured .filters button{color:#e2e8f0!important}
 #featured .filters button.on{color:#0b1220!important}
+
+/* Animated hero blobs */
+.banner.style1{position:relative;overflow:hidden}
+.banner.style1 .content,.banner.style1 .image{position:relative;z-index:1}
+.banner.style1:before,.banner.style1:after{content:"";position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;z-index:0;pointer-events:none}
+.banner.style1:before{width:26rem;height:26rem;left:-6rem;top:-6rem;background:#38bdf8;animation:float1 14s ease-in-out infinite alternate}
+.banner.style1:after{width:22rem;height:22rem;left:30%;bottom:-8rem;background:#a78bfa;animation:float2 17s ease-in-out infinite alternate}
+@keyframes float1{to{transform:translate(8rem,6rem) scale(1.15)}}
+@keyframes float2{to{transform:translate(-7rem,-5rem) scale(1.2)}}
+@media(prefers-reduced-motion:reduce){.banner.style1:before,.banner.style1:after{animation:none}}
+
+/* Portfolio (old projects) dark band */
+#journey + section{background:radial-gradient(circle at 80% 0%,rgba(167,139,250,.22),transparent 50%),linear-gradient(180deg,#111c33,#0b1220);color:#cbd5e1}
+#journey + section h2,#journey + section h3{color:#fff}
+#journey + section p{color:#cbd5e1}
+#journey + section .gallery article{background:rgba(255,255,255,.05)}
+
+/* Contact */
+#contactForm input[type=text],#contactForm input[type=email],#contactForm textarea{transition:box-shadow .2s,border-color .2s}
+#contactForm input:focus,#contactForm textarea:focus{border-color:#38bdf8;box-shadow:0 0 0 3px rgba(56,189,248,.25)}
+#contactForm{background:#fff;padding:2rem;border-radius:1rem;box-shadow:0 6px 24px rgba(15,23,42,.08)}
