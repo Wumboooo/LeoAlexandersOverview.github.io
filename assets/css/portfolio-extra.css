@@ -209,3 +209,15 @@ body:after{content:"";position:fixed;right:4vw;top:6vh;width:7rem;height:7rem;bo
 #wrapper .gallery article>a.image{background:#14103d}
 #wrapper .gallery article>a.image img{object-fit:contain;padding:.9rem}
 #wrapper .gallery article>a.image img{object-fit:cover;object-position:center;padding:0}
+
+/* ===== One shared glow layer for the whole page (no per-section clipping) ===== */
+body{position:relative}
+#sky{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+#sky i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5}
+#sky .b1{width:28rem;height:28rem;left:-6rem;top:2rem;background:#38bdf8;animation:float1 14s ease-in-out infinite alternate}
+#sky .b2{width:26rem;height:26rem;left:28%;top:34rem;background:#a78bfa;animation:float2 17s ease-in-out infinite alternate}
+#sky .b3{width:30rem;height:30rem;right:-8rem;top:130rem;background:#ff4f9a;opacity:.35;animation:float1 19s ease-in-out infinite alternate}
+#sky .b4{width:30rem;height:30rem;left:-8rem;top:230rem;background:#c084fc;opacity:.4;animation:float2 21s ease-in-out infinite alternate}
+#wrapper .banner.style1:before,#wrapper .banner.style1:after{display:none!important}
+@media(prefers-reduced-motion:reduce){#sky i{animation:none}}
+#sky{background:linear-gradient(180deg,#14103d 0%,#2a1b66 30%,#3d2475 60%,#7a3a8c 82%,#d0589a 100%)}
