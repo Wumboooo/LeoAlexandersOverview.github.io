@@ -50,3 +50,18 @@
 		try { localStorage.setItem('light', on ? '1' : '0'); } catch (e) {}
 	});
 })();
+
+// sakura petals for the contact scene
+(function () {
+	var box = document.getElementById('petals');
+	if (!box || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+	for (var i = 0; i < 22; i++) {
+		var p = document.createElement('i');
+		p.style.left = Math.random() * 100 + '%';
+		p.style.setProperty('--dx', (Math.random() * 160 - 80) + 'px');
+		p.style.animationDuration = (9 + Math.random() * 9) + 's';
+		p.style.animationDelay = (-Math.random() * 18) + 's';
+		p.style.transform = 'scale(' + (0.6 + Math.random() * 0.9) + ')';
+		box.appendChild(p);
+	}
+})();

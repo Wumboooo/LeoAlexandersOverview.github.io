@@ -75,3 +75,34 @@ body.light-mode #wrapper img{filter:invert(1) hue-rotate(180deg)}
 #contactForm input[type=text],#contactForm input[type=email],#contactForm textarea{transition:box-shadow .2s,border-color .2s}
 #contactForm input:focus,#contactForm textarea:focus{border-color:#38bdf8;box-shadow:0 0 0 3px rgba(56,189,248,.25)}
 #contactForm{background:#fff;padding:2rem;border-radius:1rem;box-shadow:0 6px 24px rgba(15,23,42,.08)}
+
+/* ===== Anime contact scene ===== */
+#contact{position:relative;overflow:hidden;color:#fff;padding-bottom:9rem;
+ background:radial-gradient(circle at 50% 110%,#ff9ac8 0,transparent 55%),linear-gradient(180deg,#1b1450 0%,#4a2a7a 55%,#c0508f 100%)}
+#contact:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;
+ background-image:radial-gradient(#fff 1.2px,transparent 1.4px);background-size:14px 14px;
+ -webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%)}
+#contact .inner{position:relative;z-index:2}
+#contact .moon{position:absolute;right:-1rem;top:-2rem;width:9rem;height:9rem;border-radius:50%;
+ background:radial-gradient(circle at 35% 35%,#fffbe6,#ffe58a);box-shadow:0 0 60px 20px rgba(255,229,138,.45);animation:bob 6s ease-in-out infinite alternate;z-index:-1}
+@keyframes bob{to{transform:translateY(14px)}}
+.quest-title{color:#fff;font-weight:800;letter-spacing:.02em;text-shadow:3px 3px 0 #ff4f9a,6px 6px 0 rgba(0,0,0,.35)}
+.quest-sub{color:#ffe6f3;margin-bottom:2rem}
+#contact #contactForm{background:#fffdf7;color:#1b1450;border:4px solid #0b1220;border-radius:1rem;
+ box-shadow:8px 8px 0 #ff4f9a;position:relative;text-align:left}
+#contact #contactForm:after{content:"";position:absolute;left:3rem;bottom:-26px;border:13px solid transparent;border-top:22px solid #0b1220;border-bottom:0}
+#contact #contactForm label{color:#1b1450;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:.75rem;text-align:left}
+#contact #contactForm input[type=text],#contact #contactForm input[type=email],#contact #contactForm textarea{
+ border:3px solid #0b1220;border-radius:.6rem;background:#fff;color:#1b1450}
+#contact #contactForm input:focus,#contact #contactForm textarea:focus{border-color:#ff4f9a;box-shadow:4px 4px 0 #ffb3d6}
+#contact #contactForm input[type=submit]{background:#ff4f9a;color:#fff!important;border:3px solid #0b1220;border-radius:2rem;
+ box-shadow:4px 4px 0 #0b1220;font-weight:800;transition:transform .12s,box-shadow .12s}
+#contact #contactForm input[type=submit]:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #0b1220;background:#ff6fb0}
+#contact #contactForm input[type=submit]:active{transform:translate(3px,3px);box-shadow:1px 1px 0 #0b1220}
+.torii{position:absolute;left:50%;bottom:-1px;transform:translateX(-50%);width:min(30rem,70%);z-index:1;opacity:.95;pointer-events:none}
+#petals{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+#petals i{position:absolute;top:-2rem;width:12px;height:9px;background:#ffc2de;border-radius:100% 0 100% 0;opacity:.85;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(var(--dx),115vh) rotate(540deg)}}
+#thankYouPopup{color:#1b1450;border:4px solid #0b1220!important;border-radius:1rem;box-shadow:6px 6px 0 #ff4f9a!important;z-index:100000}
+@media(max-width:736px){#contact .moon{width:5rem;height:5rem}#contact #contactForm{padding:1.25rem}}
+@media(prefers-reduced-motion:reduce){#petals i,#contact .moon{animation:none}}
