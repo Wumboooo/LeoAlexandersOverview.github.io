@@ -31,3 +31,7 @@
 body.light-mode #wrapper{filter:invert(1) hue-rotate(180deg)}
 body.light-mode #wrapper img{filter:invert(1) hue-rotate(180deg)}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.timeline{list-style:none;margin:2rem 0 0;padding:0 0 0 1.5rem;border-left:3px solid #38bdf8;text-align:left}
+.timeline li{position:relative;margin-bottom:1.5rem}
+.timeline li:before{content:"";position:absolute;left:-2.05rem;top:.45rem;width:.9rem;height:.9rem;border-radius:50%;background:#38bdf8}
+.timeline b{display:inline-block;min-width:3.5rem;color:#38bdf8}

@@ -6,7 +6,14 @@
 -->
 <html>
 	<head>
-		<title>Leo Alexander's Overview</title>
+		<title>Leo Alexander | Full-stack &amp; Flutter Developer</title>
+			<meta name="description" content="Leo Alexander - full-stack and Flutter developer building ERP systems (PHP, PostgreSQL, Flutter). Portfolio, case studies and contact." />
+			<meta property="og:title" content="Leo Alexander | Full-stack &amp; Flutter Developer" />
+			<meta property="og:description" content="ERP systems, mobile apps and APIs - portfolio and case studies." />
+			<meta property="og:type" content="website" />
+			<meta property="og:image" content="images/myphoto.jpg" />
+			<meta name="theme-color" content="#0b1220" />
+			<link rel="icon" href="images/myphoto1.png" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -23,9 +30,12 @@
 					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 						<div class="content">
 							<h1>I'm Leo Alexander</h1>
-							<p class="major">Informatic Engineering Student at UIN Syarif Hidayatullah Jakarta, Have a willingness to do something new and quite difficult to keep improving myself.✊</p>
+							<p class="major">Full-stack &amp; Flutter developer building ERP systems used by real field technicians. Informatics Engineering student at UIN Syarif Hidayatullah Jakarta. &#9994;</p>
+							<p><strong>1,000+ commits</strong> on a production ERP &middot; PHP &middot; PostgreSQL &middot; Flutter &middot; Laravel</p>
 							<ul class="actions stacked">
-								<li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
+								<li><a href="mailto:leoalex949@gmail.com?subject=Opportunity%20for%20Leo" class="button big wide">Hire Me</a></li>
+								<li><a href="#featured" class="button big wide smooth-scroll-middle">See My Work</a></li>
+								<li><a href="https://www.linkedin.com/in/leo-alexander-55a65721b/" class="button big wide">LinkedIn</a></li>
 							</ul>
 						</div>
 						<div class="image">
@@ -37,11 +47,11 @@
 					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
 						<div class="content">
 							<h2>Skills</h2>
-							<p>Even I'm a newbie at this thing, I can keep up with these skills on me : <br>Kotlin • HTML, CSS, and Basic Level JavaScript • Computer Networking • PHP Laravel • Node.js • PostgreSQL • MySQL</p>
-							<p>Tools & Frameworks : <br>Android Studio, Git, VS Code, etc.</p>
-							<ul class="actions stacked">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
+							<p><strong>Backend:</strong> PHP (MVC, Laravel), Node.js / Express, REST APIs &mdash; <em>Customer Care ERP</em><br>
+							<strong>Database:</strong> PostgreSQL, MySQL, query &amp; index tuning &mdash; <em>Customer Care ERP</em><br>
+							<strong>Mobile:</strong> Flutter, Kotlin, Firebase FCM &mdash; <em>Milenorxel Mobile, Bangkit capstone</em><br>
+							<strong>Frontend:</strong> HTML, CSS, JavaScript<br>
+							<strong>Tooling:</strong> Git, PHPStan, ESLint, Android Studio, VS Code, Computer Networking</p>
 						</div>
 						<div class="image">
 							<img src="images/myphoto1.png" alt="" />
@@ -90,7 +100,36 @@
 							</div>
 						</section>
 
-<!-- Five -->
+<!-- Case studies -->
+						<section class="wrapper style1 align-center" id="cases">
+							<div class="inner">
+								<h2>Case Studies</h2>
+								<p>Problems I solved on the job &mdash; what was wrong, what I did, what changed.</p>
+								<div class="cards">
+									<article class="card reveal"><div class="body"><h3>Slow ticket page</h3><span class="role">Performance &middot; PostgreSQL / PHP</span>
+										<p><strong>Problem:</strong> the ticket-create page full-scanned ~27k external rows on every load.<br><strong>Fix:</strong> cached the branch options with a TTL and identified the missing indexes for serial search.<br><strong>Result:</strong> the page no longer pays the full-scan cost per request.</p></div></article>
+									<article class="card reveal"><div class="body"><h3>Closed-app push notifications</h3><span class="role">Mobile &middot; Flutter / FCM</span>
+										<p><strong>Problem:</strong> technicians could miss new tickets when the app was closed.<br><strong>Fix:</strong> an in-app feed plus Firebase push triggered from ticket events, with device registration.<br><strong>Result:</strong> alerts reach technicians even when the app is not open.</p></div></article>
+									<article class="card reveal"><div class="body"><h3>Safer releases, three environments</h3><span class="role">Release &middot; Flutter flavors / Shorebird</span>
+										<p><strong>Problem:</strong> one build pointed at one API, which made testing risky.<br><strong>Fix:</strong> dev / staging / prod Android flavors and per-flavor over-the-air patches.<br><strong>Result:</strong> testing stays off production data and fixes ship without a full reinstall.</p></div></article>
+								</div>
+							</div>
+						</section>
+
+					<!-- Timeline -->
+						<section class="wrapper style1 align-center" id="journey">
+							<div class="inner medium">
+								<h2>Journey</h2>
+								<ul class="timeline">
+									<li class="reveal"><b>Bangkit</b> Built a Kotlin capstone app in a team (cohort C241)</li>
+									<li class="reveal"><b>UIN</b> Thesis project &mdash; Test Simulation app</li>
+									<li class="reveal"><b>Side</b> POS projects in Laravel and Node.js</li>
+									<li class="reveal"><b>2026</b> Building the Customer Care ERP module (PHP / PostgreSQL) and the Milenorxel mobile app</li>
+								</ul>
+							</div>
+						</section>
+
+					<!-- Five -->
 					<section class="wrapper style1 align-center">
 						<div class="inner">
 							<h2>Portfolio</h2>
