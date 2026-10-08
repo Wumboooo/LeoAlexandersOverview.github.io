@@ -10,11 +10,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+			<link rel="stylesheet" href="assets/css/portfolio-extra.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
+			<div id="progress"></div><div id="lb"><img alt="" /></div><button id="themeToggle" aria-label="Toggle theme">&#9680;</button>
 			<div id="wrapper" class="divided">
 
 				<!-- One -->
@@ -46,21 +48,49 @@
 						</div>
 					</section>
 
-				<!-- Three -->
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
-						<div class="content">
-							<h2>Tempus adipiscing</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
-							<ul class="actions stacked">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</div>
-						<div class="image">
-							<img src="images/spotlight02.jpg" alt="" />
-						</div>
-					</section>
+				<!-- Featured -->
+						<section class="wrapper style1 align-center" id="featured">
+							<div class="inner">
+								<h2>Featured Work</h2>
+								<p>Enterprise systems I help build at work. The apps are internal, so these visuals are censored mockups &mdash; no real company data.</p>
+								<div class="stats reveal">
+									<div class="stat"><b data-count="1830" data-suffix="+">0</b><span>Customer Care commits</span></div>
+									<div class="stat"><b data-count="1889">0</b><span>Module files</span></div>
+									<div class="stat"><b data-count="3">0</b><span>Platforms</span></div>
+								</div>
+								<div class="filters">
+									<button class="on" data-f="all">All</button><button data-f="web">Web</button><button data-f="mobile">Mobile</button><button data-f="backend">Backend</button>
+								</div>
+								<div class="cards">
+									<article class="card reveal" data-tags="web backend">
+										<img src="assets/projects/customer-care.svg" alt="Customer Care dashboard mockup" />
+										<div class="body"><h3>Customer Care Platform</h3><span class="role">Co-built with wesa &middot; ERP module</span>
+											<p>A native PHP MVC module of an internal ERP: ticketing and SLA dashboards, technician dispatch (SPD), reimbursement and wallet, sparepart requests, customer satisfaction and KPI &mdash; plus the JSON APIs that power the mobile app.</p>
+											<ul class="chips"><li>PHP</li><li>PostgreSQL</li><li>REST API</li><li>JavaScript</li><li>PHPStan / ESLint</li></ul>
+											<details><summary>Highlights</summary><ul><li>~1,800 commits, 400+ models, 125+ services</li><li>Role-based permissions and approval workflows</li><li>Contract-tested APIs shared with mobile</li></ul></details>
+										</div>
+									</article>
+									<article class="card reveal" data-tags="mobile">
+										<img src="assets/projects/milenorxel-mobile.svg" alt="Milenorxel mobile mockup" />
+										<div class="body"><h3>Milenorxel Mobile</h3><span class="role">Solo &middot; Flutter / Android</span>
+											<p>Field-technician app: tickets, on-site reports with a guarded camera capture flow, SPD/PUM submission, wallet view, push notifications and in-app updates.</p>
+											<ul class="chips"><li>Flutter</li><li>Firebase FCM</li><li>Shorebird</li><li>Android flavors</li></ul>
+											<details><summary>Highlights</summary><ul><li>dev / staging / prod flavors per API</li><li>Closed-app push via FCM</li><li>OTA patches with Shorebird</li></ul></details>
+										</div>
+									</article>
+									<article class="card reveal" data-tags="web">
+										<img src="assets/projects/milenorxel-web.svg" alt="Milenorxel web mockup" />
+										<div class="body"><h3>Milenorxel Web</h3><span class="role">Solo &middot; Technician portal</span>
+											<p>Web companion for technicians: handle assigned tickets, follow progress and review activity from the browser.</p>
+											<ul class="chips"><li>Web</li><li>PHP</li><li>PostgreSQL</li></ul>
+										</div>
+									</article>
+								</div>
+								<p class="note">Internal company software &mdash; not publicly available. Happy to walk through it in an interview.</p>
+							</div>
+						</section>
 
-				<!-- Five -->
+<!-- Five -->
 					<section class="wrapper style1 align-center">
 						<div class="inner">
 							<h2>Portfolio</h2>
@@ -141,79 +171,7 @@
 										</ul>
 									</div>
 								</article>
-								<article>
-									<a href="images/gallery/fulls/07.jpg" class="image">
-										<img src="images/gallery/thumbs/07.jpg" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Ipsum Lorem</h3>
-										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
-										<ul class="actions fixed">
-											<li><span class="button small">Details</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/gallery/fulls/08.jpg" class="image">
-										<img src="images/gallery/thumbs/08.jpg" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Magna Risus</h3>
-										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
-										<ul class="actions fixed">
-											<li><span class="button small">Details</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/gallery/fulls/09.jpg" class="image">
-										<img src="images/gallery/thumbs/09.jpg" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Tempus Dolor</h3>
-										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
-										<ul class="actions fixed">
-											<li><span class="button small">Details</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/gallery/fulls/10.jpg" class="image">
-										<img src="images/gallery/thumbs/10.jpg" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Sed Etiam</h3>
-										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
-										<ul class="actions fixed">
-											<li><span class="button small">Details</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/gallery/fulls/11.jpg" class="image">
-										<img src="images/gallery/thumbs/11.jpg" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Magna Lorem</h3>
-										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
-										<ul class="actions fixed">
-											<li><span class="button small">Details</span></li>
-										</ul>
-									</div>
-								</article>
-								<article>
-									<a href="images/gallery/fulls/12.jpg" class="image">
-										<img src="images/gallery/thumbs/12.jpg" alt="" />
-									</a>
-									<div class="caption">
-										<h3>Ipsum Dolor</h3>
-										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
-										<ul class="actions fixed">
-											<li><span class="button small">Details</span></li>
-										</ul>
-									</div>
-								</article>
-							</div>
+</div>
 
 					</section>
 
@@ -307,6 +265,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		<script src="assets/js/portfolio-extra.js"></script>
 
 	</body>
 </html>

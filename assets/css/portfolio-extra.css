@@ -1,0 +1,33 @@
+/* Featured work section + interactivity */
+#featured .inner{max-width:72rem}
+.stats{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin:2rem 0}
+.stat{min-width:9rem;padding:1rem 1.5rem;border-radius:.75rem;background:rgba(127,127,127,.1)}
+.stat b{display:block;font-size:2rem;line-height:1.1}
+.stat span{font-size:.8rem;opacity:.7;text-transform:uppercase;letter-spacing:.08em}
+.filters{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.filters button{cursor:pointer;border-radius:2rem;padding:0 1.25rem;height:2.5rem;border:1px solid rgba(127,127,127,.4);background:none;color:inherit}
+.filters button.on{background:#38bdf8;border-color:#38bdf8;color:#0b1220}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.75rem;text-align:left}
+.card{border-radius:1rem;overflow:hidden;background:rgba(127,127,127,.08);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+.card.hide{display:none}
+.card img{display:block;width:100%;cursor:zoom-in}
+.card .body{padding:1.25rem 1.5rem 1.5rem}
+.card h3{margin:0 0 .25rem}
+.card .role{font-size:.8rem;opacity:.7;margin-bottom:.75rem;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.9rem 0 0;padding:0;list-style:none}
+.chips li{padding:.15rem .7rem;font-size:.72rem;border-radius:1rem;background:rgba(56,189,248,.15)}
+.card details{margin-top:.9rem}
+.card summary{cursor:pointer;font-weight:600}
+.card details ul{margin:.6rem 0 0 1.1rem}
+.note{font-size:.8rem;opacity:.65;margin-top:2rem}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99999;cursor:zoom-out}
+#lb.open{display:flex}
+#lb img{max-width:92vw;max-height:90vh;border-radius:.5rem}
+#themeToggle{padding:0;line-height:3rem;min-width:0;letter-spacing:0;position:fixed;right:1rem;bottom:1rem;z-index:9999;width:3rem;height:3rem;border-radius:50%;border:0;cursor:pointer;font-size:1.3rem;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:#38bdf8;z-index:99999}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+body.light-mode #wrapper{filter:invert(1) hue-rotate(180deg)}
+body.light-mode #wrapper img{filter:invert(1) hue-rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
