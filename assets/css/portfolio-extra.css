@@ -260,3 +260,17 @@ body{position:relative}
 	.filters button{padding:0 1rem}
 	#featured .inner,#academic .inner,#cases .inner,#journey .inner{padding-left:1rem;padding-right:1rem}
 }
+
+/* mobile in-app browsers (Instagram etc.): never let anything widen the layout viewport */
+html,body{max-width:100%;overflow-x:hidden}
+@supports(overflow:clip){html,body{overflow-x:clip}}
+#wrapper{max-width:100vw;overflow-x:clip}
+#featured,#academic,#cases{max-width:100%;overflow-x:clip}
+#featured .inner{box-sizing:border-box;width:100%}
+.cards.feature,.cards.feature .card,.stats,.filters{max-width:100%;box-sizing:border-box}
+.cards.feature .card img{width:100%;max-width:100%;height:auto;min-width:0}
+@media(max-width:736px){
+	.cards.feature .card{display:block}
+	.stats{gap:.75rem}
+	.stat{flex:1 1 calc(50% - .75rem)}
+}
