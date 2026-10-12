@@ -244,3 +244,19 @@ body{position:relative}
 .cards.feature .card:nth-child(even) img{order:2}
 .cards.feature .card .body{padding:1.75rem 2rem}
 @media(max-width:980px){.cards.feature .card{grid-template-columns:1fr}.cards.feature .card:nth-child(even) img{order:0}}
+
+/* mobile: let grids shrink to the screen instead of overflowing */
+.cards{grid-template-columns:repeat(auto-fit,minmax(min(18rem,100%),1fr))}
+.cards.feature{grid-template-columns:minmax(0,1fr)}
+.cards.feature .card{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+.card,.card .body{min-width:0;overflow-wrap:anywhere}
+.card img{max-width:100%;height:auto}
+@media(max-width:980px){.cards.feature .card{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:736px){
+	.cards.feature{gap:1.5rem}
+	.cards.feature .card .body{padding:1.25rem 1.1rem 1.4rem}
+	.cards.feature .card img{padding:.75rem}
+	.stat{min-width:0;flex:1 1 7rem;padding:.8rem 1rem}
+	.filters button{padding:0 1rem}
+	#featured .inner,#academic .inner,#cases .inner,#journey .inner{padding-left:1rem;padding-right:1rem}
+}

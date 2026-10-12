@@ -17,7 +17,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-			<link rel="stylesheet" href="assets/css/portfolio-extra.css?v=16" />
+			<link rel="stylesheet" href="assets/css/portfolio-extra.css?v=17" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -104,8 +104,8 @@
 <!-- Academic -->
 						<section class="wrapper style1 align-center" id="academic">
 							<div class="inner">
-								<h2>Team &amp; Academic Projects</h2>
-								<p>Public projects from my Bangkit cohort and my thesis &mdash; the code is on GitHub.</p>
+								<h2>Personal, Team &amp; Academic Projects</h2>
+								<p>Projects I built outside work &mdash; my Bangkit capstone, my thesis and a point-of-sale app. The code is on GitHub (see the gallery below).</p>
 								<div class="cards feature">
 									<article class="card reveal">
 										<img src="images/Portfolio1.png" alt="Word Warden app screenshot" />
@@ -125,6 +125,14 @@
 											
 										</div>
 									</article>
+																	<article class="card reveal">
+										<img src="images/Portfolio6.png" alt="POS Node.js app screenshot" />
+										<div class="body"><h3>Kasir &mdash; Point of Sale</h3><span class="role">Personal project &middot; Solo &middot; Node.js / React</span>
+											<p>A single-page point-of-sale app: browse products by category, build a cart, check out with a new or existing customer, and look back at past transactions. The interface is in Indonesian with IDR pricing.</p>
+											<ul class="chips"><li>Node.js</li><li>Express</li><li>Sequelize</li><li>PostgreSQL</li><li>React 19</li><li>Vite</li></ul>
+											<details><summary>What I built</summary><ul><li>REST API for products, categories, customers and transactions</li><li>Checkout inside a database transaction: stock is checked per item, decremented on success and rolled back on error</li><li>Price and subtotals copied into each transaction line, so history stays correct if prices change later</li><li>React UI with category sidebar, product search, stock and sold-out badges, cart quantity controls and add/edit/delete product modals</li><li>Customer lookup by name at checkout, creating a new customer when none matches</li><li>Toast notifications and client-side stock checks before an item enters the cart</li></ul></details>
+										</div>
+									</article>
 								</div>
 							</div>
 						</section>
@@ -141,6 +149,18 @@
 										<p><strong>Problem:</strong> technicians could miss new tickets when the app was closed.<br><strong>Fix:</strong> an in-app feed plus Firebase push triggered from ticket events, with device registration.<br><strong>Result:</strong> alerts reach technicians even when the app is not open.</p></div></article>
 									<article class="card reveal"><div class="body"><h3>Safer releases, three environments</h3><span class="role">Release &middot; Flutter flavors / Shorebird</span>
 										<p><strong>Problem:</strong> one build pointed at one API, which made testing risky.<br><strong>Fix:</strong> dev / staging / prod Android flavors and per-flavor over-the-air patches.<br><strong>Result:</strong> testing stays off production data and fixes ship without a full reinstall.</p></div></article>
+									<article class="card reveal"><div class="body"><h3>Linking tickets to technicians properly</h3><span class="role">Data model &middot; PostgreSQL / PHP</span>
+										<p><strong>Problem:</strong> request tables tied a technician to a record by matching a name and a text marker, which was fragile.<br><strong>Fix:</strong> added a real technician-ID column to the four request tables, with an idempotent migration and code that still works before the migration runs.<br><strong>Result:</strong> ownership is a plain ID lookup instead of a text match.</p></div></article>
+									<article class="card reveal"><div class="body"><h3>One camera standard for six screens</h3><span class="role">Mobile &middot; Flutter</span>
+										<p><strong>Problem:</strong> six near-duplicate capture screens, and the preview did not match the saved photo.<br><strong>Fix:</strong> defined one standard &mdash; a crash guard plus an uncropped, native-aspect preview so what you see is what is saved.<br><strong>Result:</strong> consistent behaviour and fewer camera crashes in the field.</p></div></article>
+									<article class="card reveal"><div class="body"><h3>Shipping DB changes without touching live data</h3><span class="role">Process &middot; SQL migrations</span>
+										<p><strong>Problem:</strong> schema changes on a live ERP are easy to get wrong and hard to undo.<br><strong>Fix:</strong> every change is a dated, idempotent SQL file handed over for review, never run directly on production, and the code degrades gracefully until it is applied.<br><strong>Result:</strong> safe to re-run, easy to review, no surprises on release day.</p></div></article>
+									<article class="card reveal"><div class="body"><h3>Catching breakage before release</h3><span class="role">Quality &middot; PHPStan / ESLint / tests</span>
+										<p><strong>Problem:</strong> a large PHP and JS codebase with several people committing to it.<br><strong>Fix:</strong> static analysis and linting, a single test runner, a browser check before merging, and test-first changes for anything that could crash or touch auth, payments or the database.<br><strong>Result:</strong> risky changes are verified before they reach staging.</p></div></article>
+									<article class="card reveal"><div class="body"><h3>&ldquo;Problem with the app file&rdquo; on update</h3><span class="role">Debugging &middot; Android / deployment</span>
+										<p><strong>Problem:</strong> the in-app updater failed with a generic parse error.<br><strong>Fix:</strong> traced it to two causes &mdash; the configured download name not matching the uploaded file (so an error page was saved as the APK), and an APK signed with a different key than the installed app.<br><strong>Result:</strong> a clear checklist for publishing updates that install cleanly.</p></div></article>
+									<article class="card reveal"><div class="body"><h3>A fair, resilient exam timer</h3><span class="role">Mobile &middot; Kotlin / Simulingo</span>
+										<p><strong>Problem:</strong> a timed test must not lose or gain time when the user leaves the app.<br><strong>Fix:</strong> a shared countdown that pauses in the background, resumes on return and moves to the next section when time runs out, with answers saved before each move.<br><strong>Result:</strong> sections end on time without losing answers.</p></div></article>
 								</div>
 							</div>
 						</section>
