@@ -1,5 +1,5 @@
 /* Featured work section + interactivity */
-#featured .inner{max-width:72rem}
+#featured .inner{max-width:min(72rem,100%)}
 .stats{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin:2rem 0}
 .stat{min-width:9rem;padding:1rem 1.5rem;border-radius:.75rem;background:rgba(127,127,127,.1)}
 .stat b{display:block;font-size:2rem;line-height:1.1}
@@ -225,7 +225,7 @@ body{position:relative}
 /* ===== Form INSIDE the torii gate ===== */
 .torii{display:none!important}
 #contact{padding-bottom:5rem}
-#contact .inner{max-width:60rem}
+#contact .inner{max-width:min(60rem,100%)}
 .gate{position:relative;padding:4.2rem 3.4rem 0;margin-top:1.5rem}
 .gate .kasagi{position:absolute;left:-1.5rem;right:-1.5rem;top:0;width:calc(100% + 3rem);height:3.2rem;fill:#ff4f9a;stroke:#0b1220;stroke-width:3;z-index:3;filter:drop-shadow(4px 4px 0 #0b1220)}
 .gate .nuki{position:absolute;left:.4rem;right:.4rem;top:3.2rem;height:.9rem;background:#ff4f9a;border:3px solid #0b1220;border-radius:.2rem;z-index:3}
