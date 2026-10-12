@@ -274,3 +274,11 @@ html,body{max-width:100%;overflow-x:hidden}
 	.stats{gap:.75rem}
 	.stat{flex:1 1 calc(50% - .75rem)}
 }
+
+/* phones: drop the expensive effects (blur, animated blobs, petals) */
+@media(max-width:736px){
+	#wrapper .card,#cases .card,#featured .card{backdrop-filter:none;-webkit-backdrop-filter:none}
+	#sky i{filter:blur(40px);animation:none}
+	#petals i:nth-child(n+9){display:none}
+}
+.filters button,#themeToggle{min-height:44px}
