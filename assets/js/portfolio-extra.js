@@ -24,7 +24,7 @@
 	document.querySelectorAll('.reveal').forEach(function (n) { io.observe(n); });
 
 	// filters
-	var cards = document.querySelectorAll('.card');
+	var cards = document.querySelectorAll('#featured .card[data-tags]');
 	document.querySelectorAll('.filters button').forEach(function (b) {
 		b.addEventListener('click', function () {
 			document.querySelectorAll('.filters button').forEach(function (x) { x.classList.remove('on'); });

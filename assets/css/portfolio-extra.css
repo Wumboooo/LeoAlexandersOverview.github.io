@@ -10,7 +10,7 @@
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.75rem;text-align:left}
 .card{border-radius:1rem;overflow:hidden;background:rgba(127,127,127,.08);transition:transform .25s,box-shadow .25s}
 .card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.25)}
-.card.hide{display:none}
+.card.hide,.cards.feature .card.hide{display:none}
 .card img{display:block;width:100%;cursor:zoom-in}
 .card .body{padding:1.25rem 1.5rem 1.5rem}
 .card h3{margin:0 0 .25rem}
