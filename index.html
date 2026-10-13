@@ -53,11 +53,12 @@
 					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
 						<div class="content">
 							<h2>Skills</h2>
-							<p><strong>Backend:</strong> PHP (native MVC, Laravel), Node.js / Express, Sequelize, REST / JSON APIs, role-based permissions &amp; approval workflows &mdash; <em>Customer Care ERP, Kasir POS</em><br>
-							<strong>Database:</strong> PostgreSQL, MySQL, query &amp; index tuning, caching, idempotent SQL migrations, transactional checkout &mdash; <em>Customer Care ERP, Kasir POS</em><br>
+							<p><strong>Backend:</strong> PHP (native MVC, Laravel), Node.js / Express, Sequelize, REST / JSON APIs, role-based permissions &amp; approval workflows, payment-gateway integration (signed webhooks, idempotent settlement) &mdash; <em>Customer Care ERP, Kasir Pintar</em><br>
+							<strong>Database:</strong> PostgreSQL, MySQL, query &amp; index tuning, caching, idempotent SQL migrations, row-locked transactional checkout &mdash; <em>Customer Care ERP, Kasir Pintar</em><br>
 							<strong>Mobile:</strong> Flutter / Dart, Kotlin (Android), Retrofit, Room, Firebase (Auth, Firestore, FCM push), Google Sign-In, Android flavors, OTA updates with Shorebird &mdash; <em>Milenorxel Mobile, Word Warden, Simulingo</em><br>
-							<strong>Frontend:</strong> JavaScript, React 19 + Vite, HTML, CSS, responsive &amp; dashboard UIs &mdash; <em>Kasir POS, Customer Care dashboards</em><br>
+							<strong>Frontend:</strong> JavaScript, React 19 + Vite, HTML, CSS, responsive &amp; dashboard UIs &mdash; <em>Kasir Pintar, Customer Care dashboards</em><br>
 							<strong>Quality &amp; Delivery:</strong> Git, PHPStan, ESLint, test-first changes, contract-tested APIs, dev / staging / prod environments, release debugging<br>
+							<strong>AI:</strong> Claude API tool use with constrained read-only tools, prompt design, rate &amp; spend limits, AI-assisted development &mdash; <em>Kasir Pintar</em><br>
 							<strong>Also:</strong> integrating ML APIs into apps, Android Studio, VS Code, computer networking</p>
 						</div>
 						<div class="image">
@@ -111,8 +112,17 @@
 						<section class="wrapper style1 align-center" id="academic">
 							<div class="inner">
 								<h2>Personal, Team &amp; Academic Projects</h2>
-								<p>Projects I built outside work &mdash; my Bangkit capstone, my thesis and a point-of-sale app. The code is on GitHub (see the gallery below).</p>
+								<p>Projects I built outside work &mdash; a point-of-sale with real payments and an AI assistant, my Bangkit capstone and my thesis. The code is on GitHub (see the gallery below).</p>
 								<div class="cards feature">
+									<article class="card reveal">
+										<img src="images/kasir-pintar-pos.jpg" alt="Kasir Pintar point-of-sale screen: product grid with a cart and a Rp 58.000 total" loading="lazy" decoding="async" />
+										<div class="body"><h3>Kasir Pintar &mdash; POS with QRIS payments &amp; AI assistant</h3><span class="role">Personal project &middot; Solo &middot; Node.js / React / PostgreSQL</span>
+											<p>A point-of-sale for small food &amp; beverage businesses, grown from my first POS into a full-stack app: owner and cashier roles, cash or online payment through a Midtrans-based gateway layer (QRIS / e-wallet), a sales dashboard, and a Claude-powered assistant that answers questions about sales and stock in Indonesian.</p>
+											<ul class="chips"><li>Node.js</li><li>Express 5</li><li>PostgreSQL</li><li>React 19</li><li>Midtrans</li><li>Claude API</li><li>JWT</li><li>Vite</li></ul>
+											<details><summary>What I built</summary><ul><li>Checkout that cannot oversell: product rows are locked inside one transaction, prices come from the database and are copied onto each order line. A test fires 12 parallel checkouts at 5 units of stock and exactly 5 succeed</li><li>Online payments that reserve stock, then confirm: signed webhooks (SHA-512 plus amount check), status polling and a sweeper that expires unpaid orders and releases the stock. Duplicate, forged and late notifications are handled safely</li><li>A payment-provider interface with a Midtrans Snap adapter and a signed mock gateway, so the whole flow is testable without an account</li><li>An AI assistant limited to five fixed read-only queries (the model never writes SQL), with strict tool schemas, per-minute rate limits and a daily cap</li><li>Owner / cashier roles, zod validation, bcrypt, helmet CSP, idempotency keys, and SQL migrations with CHECK constraints</li><li>Responsive UI checked from 320 px up: sidebar on desktop, bottom navigation and a cart sheet on phones</li><li>36 automated unit and integration tests against a real PostgreSQL database</li></ul></details>
+											<ul class="actions" style="margin-top:.8em"><li><a href="https://github.com/Wumboooo/pos-nodejs-react" class="button small">Source code on GitHub</a></li></ul>
+										</div>
+									</article>
 									<article class="card reveal">
 										<img src="images/Portfolio1.png" alt="Word Warden app screenshot" loading="lazy" decoding="async" />
 										<div class="body"><h3>Word Warden</h3><span class="role">Bangkit C241 capstone &middot; Mobile Development (Kotlin / Android)</span>
@@ -129,14 +139,6 @@
 											<ul class="chips"><li>Kotlin</li><li>Firebase Auth</li><li>Cloud Firestore</li><li>Google Sign-In</li><li>Navigation</li><li>Glide</li></ul>
 											<details><summary>What I built</summary><ul><li>Google sign-in with Firebase Auth; questions, modules and results live in Firestore</li><li>Test engine that picks and shuffles questions per section, keeping passages and audio groups together</li><li>Per-section countdown timers that pause when the app goes to the background and auto-advance on timeout</li><li>Scoring with conversion tables, then a result screen, marked/incorrect question review and per-user history</li><li>Leaderboard filtered by category, kind and faculty, plus an in-app PDF viewer for learning modules</li></ul></details>
 											
-										</div>
-									</article>
-																	<article class="card reveal">
-										<img src="images/Portfolio6.png" alt="POS Node.js app screenshot" loading="lazy" decoding="async" />
-										<div class="body"><h3>Kasir &mdash; Point of Sale</h3><span class="role">Personal project &middot; Solo &middot; Node.js / React</span>
-											<p>A single-page point-of-sale app: browse products by category, build a cart, check out with a new or existing customer, and look back at past transactions. The interface is in Indonesian with IDR pricing.</p>
-											<ul class="chips"><li>Node.js</li><li>Express</li><li>Sequelize</li><li>PostgreSQL</li><li>React 19</li><li>Vite</li></ul>
-											<details><summary>What I built</summary><ul><li>REST API for products, categories, customers and transactions</li><li>Checkout inside a database transaction: stock is checked per item, decremented on success and rolled back on error</li><li>Price and subtotals copied into each transaction line, so history stays correct if prices change later</li><li>React UI with category sidebar, product search, stock and sold-out badges, cart quantity controls and add/edit/delete product modals</li><li>Customer lookup by name at checkout, creating a new customer when none matches</li><li>Toast notifications and client-side stock checks before an item enters the cart</li></ul></details>
 										</div>
 									</article>
 								</div>
@@ -167,6 +169,10 @@
 										<p><strong>Problem:</strong> the in-app updater failed with a generic parse error.<br><strong>Fix:</strong> traced it to two causes &mdash; the configured download name not matching the uploaded file (so an error page was saved as the APK), and an APK signed with a different key than the installed app.<br><strong>Result:</strong> a clear checklist for publishing updates that install cleanly.</p></div></article>
 									<article class="card reveal"><div class="body"><h3>A fair, resilient exam timer</h3><span class="role">Mobile &middot; Kotlin / Simulingo</span>
 										<p><strong>Problem:</strong> a timed test must not lose or gain time when the user leaves the app.<br><strong>Fix:</strong> a shared countdown that pauses in the background, resumes on return and moves to the next section when time runs out, with answers saved before each move.<br><strong>Result:</strong> sections end on time without losing answers.</p></div></article>
+									<article class="card reveal"><div class="body"><h3>Two cashiers, one last item</h3><span class="role">Concurrency &middot; PostgreSQL / Node.js</span>
+										<p><strong>Problem:</strong> two checkouts at the same moment could both see the last unit in stock and both sell it.<br><strong>Fix:</strong> product rows are locked (<code>FOR UPDATE</code>, in a fixed order to avoid deadlocks) inside one transaction that checks stock, copies the price onto the order line and decrements stock, plus idempotency keys so a retried request returns the same order.<br><strong>Result:</strong> a test with 12 parallel checkouts on 5 units of stock sells exactly 5 and rejects 7.</p></div></article>
+									<article class="card reveal"><div class="body"><h3>Payments that cannot double-charge or lose an order</h3><span class="role">Payments &middot; Midtrans / webhooks</span>
+										<p><strong>Problem:</strong> gateway notifications arrive late, twice, forged, or not at all, and an unpaid online order should not hold stock forever.<br><strong>Fix:</strong> stock is reserved at checkout; the webhook (SHA-512 signature and amount check), the status poll and an expiry sweeper all go through one locked state transition where paid, cancelled and expired are final.<br><strong>Result:</strong> repeated, forged, wrong-amount and late notifications are covered by automated tests, and unpaid orders return their stock.</p></div></article>
 								</div>
 							</div>
 						</section>
@@ -196,7 +202,7 @@
 								<ul class="timeline">
 									<li class="reveal"><b>Bangkit</b> Built a Kotlin capstone app in a team (cohort C241)</li>
 									<li class="reveal"><b>UIN</b> Thesis project &mdash; Test Simulation app</li>
-									<li class="reveal"><b>Side</b> POS projects in Laravel and Node.js</li>
+									<li class="reveal"><b>Side</b> POS projects in Laravel and Node.js &mdash; the Node.js one grew into Kasir Pintar, with QRIS payments and an AI assistant</li>
 									<li class="reveal"><b>2026</b> Building the Customer Care ERP module (PHP / PostgreSQL) and the Milenorxel mobile app</li>
 								</ul>
 							</div>
@@ -272,12 +278,12 @@
 									</div>
 								</article>
 								<article>
-									<a href="images/Portfolio6.png" class="image">
-										<img src="images/Portfolio6.png" alt="" loading="lazy" decoding="async" />
+									<a href="images/kasir-pintar-dashboard.jpg" class="image">
+										<img src="images/kasir-pintar-dashboard.jpg" alt="" loading="lazy" decoding="async" />
 									</a>
 									<div class="caption">
-										<h3>POS Node.js</h3>
-										<p>Basic POS project using Node.js and Express framework with Postgres as database.</p>
+										<h3>Kasir Pintar</h3>
+										<p>POS with QRIS payments (Midtrans), an owner dashboard and a Claude-powered sales assistant. Node.js, Express, React and PostgreSQL.</p>
 										<ul class="actions fixed">
 											<li><a href="https://github.com/Wumboooo/pos-nodejs-react" class="button small">Details</a></li>
 										</ul>
